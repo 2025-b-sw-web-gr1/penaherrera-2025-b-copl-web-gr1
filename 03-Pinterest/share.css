@@ -1,0 +1,47 @@
+/* share.css - estilo compacto para compartir
+   Usa un layout tipo Pinterest con sidebar fijo y grid tipo Masonry (column-count).
+*/
+:root{
+  --sidebar-width:75px;
+  --gap:16px;
+  --bg:#ffffff;
+  --muted:#999;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);font-family: Arial, Helvetica, sans-serif;color:#222}
+
+/* Sidebar */
+.sidebar{position:fixed;left:0;top:0;width:var(--sidebar-width);height:100vh;background:#fff;border-right:1px solid #e6e6e6;display:flex;flex-direction:column;align-items:center;padding-top:18px;z-index:90}
+.sidebar .logo-link{display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%}
+.sidebar .logo-img{width:32px;height:32px}
+.sidebar nav{margin-top:18px;width:100%}
+.sidebar ul{list-style:none;width:100%;display:flex;flex-direction:column;align-items:center}
+.sidebar li{margin:8px 0;width:100%;display:flex;justify-content:center}
+.nav-link{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#333;text-decoration:none;transition:background 0.18s}
+.nav-link:hover{background:#f2f2f2}
+.badge{position:absolute;top:6px;right:16px;background:#e60023;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:11px}
+li.bottom{margin-top:auto;margin-bottom:40px}
+
+/* Header */
+.header{position:sticky;top:0;margin-left:var(--sidebar-width);background:#fff;padding:8px 12px;box-shadow:0 1px 4px rgba(0,0,0,0.06);z-index:80}
+.header-container{display:flex;gap:8px;align-items:center}
+.search-bar{flex:1;margin:0 12px}
+.search-input{width:100%;padding:8px 12px;border-radius:20px;border:0;background:#efefef;font-size:14px}
+.user-avatar{width:32px;height:32px;border-radius:50%;object-fit:cover}
+
+/* Main / Masonry grid */
+.main{padding:20px;margin-left:calc(var(--sidebar-width) + 14px)}
+.pins{column-count:5;column-gap:var(--gap);}
+@media(max-width:1200px){.pins{column-count:4}}
+@media(max-width:900px){.pins{column-count:3}}
+@media(max-width:600px){.pins{column-count:2}}
+.pin{display:inline-block;width:100%;margin:0 0 16px;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.pin img{width:100%;height:auto;display:block;transition:transform .25s ease}
+.pin:hover img{transform:scale(1.03)}
+
+/* small helpers */
+.center{display:flex;align-items:center;justify-content:center}
+.material-icons{font-size:26px}
+
+/* ensure content doesn't hide under header on small screens */
+@media(max-width:600px){.header{margin-left:60px}.main{margin-left:70px}}

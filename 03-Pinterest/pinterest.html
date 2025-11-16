@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pinterest</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+/* inlined from share.css */
+:root{
+  --sidebar-width:75px;
+  --gap:16px;
+  --bg:#ffffff;
+  --muted:#999;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);font-family: Arial, Helvetica, sans-serif;color:#222}
+
+/* Sidebar */
+.sidebar{position:fixed;left:0;top:0;width:var(--sidebar-width);height:100vh;background:#fff;border-right:1px solid #e6e6e6;display:flex;flex-direction:column;align-items:center;padding-top:18px;z-index:90}
+.sidebar .logo-link{display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%}
+.sidebar .logo-img{width:32px;height:32px}
+.sidebar nav{margin-top:18px;width:100%}
+.sidebar ul{list-style:none;width:100%;display:flex;flex-direction:column;align-items:center}
+.sidebar li{margin:8px 0;width:100%;display:flex;justify-content:center}
+.nav-link{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#333;text-decoration:none;transition:background 0.18s}
+.nav-link:hover{background:#f2f2f2}
+.badge{position:absolute;top:6px;right:16px;background:#e60023;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:11px}
+li.bottom{margin-top:auto;margin-bottom:40px}
+
+/* Header */
+.header{position:sticky;top:0;margin-left:var(--sidebar-width);background:#fff;padding:8px 12px;box-shadow:0 1px 4px rgba(0,0,0,0.06);z-index:80}
+.header-container{display:flex;gap:8px;align-items:center}
+.search-bar{flex:1;margin:0 12px}
+.search-input{width:100%;padding:8px 12px;border-radius:20px;border:0;background:#efefef;font-size:14px}
+.user-avatar{width:32px;height:32px;border-radius:50%;object-fit:cover}
+
+/* Main / Masonry grid */
+.main{padding:20px;margin-left:calc(var(--sidebar-width) + 14px)}
+.pins{column-count:5;column-gap:var(--gap);}
+@media(max-width:1200px){.pins{column-count:4}}
+@media(max-width:900px){.pins{column-count:3}}
+@media(max-width:600px){.pins{column-count:2}}
+.pin{display:inline-block;width:100%;margin:0 0 16px;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.pin img{width:100%;height:auto;display:block;transition:transform .25s ease}
+.pin:hover img{transform:scale(1.03)}
+
+/* small helpers */
+.center{display:flex;align-items:center;justify-content:center}
+.material-icons{font-size:26px}
+
+/* ensure content doesn't hide under header on small screens */
+@media(max-width:600px){.header{margin-left:60px}.main{margin-left:70px}}
+
+</style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" aria-hidden="false">
+    <a class="logo-link" href="#" title="Inicio"><img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Logo"></a>
+    <nav>
+      <ul>
+        <li><a class="nav-link center" href="#" title="Inicio"><span class="material-icons">home</span></a></li>
+        <li><a class="nav-link center" href="#" title="Explorar"><span class="material-icons">explore</span></a></li>
+        <li><a class="nav-link center" href="#" title="Crear"><span class="material-icons">add_circle</span></a></li>
+        <li style="position:relative"><a class="nav-link center" href="#" title="Notificaciones"><span class="material-icons">notifications</span><span class="badge">1</span></a></li>
+        <li><a class="nav-link center" href="#" title="Mensajes"><span class="material-icons">mail</span></a></li>
+        <li class="bottom"><a class="nav-link center" href="#" title="Configuración"><span class="material-icons">settings</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <div class="search-bar">
+        <input class="search-input" placeholder="Buscar ideas..." aria-label="Buscar ideas">
+      </div>
+      <img class="user-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Usuario">
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="main">
+    <section class="pins" aria-label="Galería de imágenes">
+      <!-- Using remote images (Unsplash) - lazy loading -->
+      <article class="pin"><img loading="lazy" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=800&auto=format&fit=crop" alt="Pin 1"></article>
+      <article class="pin"><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop" alt="Pin 2"></article>
+  <article class="pin"><img loading="lazy" src="https://picsum.photos/id/1025/800/600" alt="Pin 3"></article>
+      <article class="pin"><img loading="lazy" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="Pin 4"></article>
+      <article class="pin"><img loading="lazy" src="https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=800&auto=format&fit=crop" alt="Pin 5"></article>
+      <article class="pin"><img loading="lazy" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop" alt="Pin 6"></article>
+      <article class="pin"><img loading="lazy" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=800&auto=format&fit=crop" alt="Pin 7"></article>
+      <article class="pin"><img loading="lazy" src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=800&auto=format&fit=crop" alt="Pin 8"></article>
+  <article class="pin"><img loading="lazy" src="https://images.unsplash.com/photo-1507149833265-60c372daea22?q=80&w=800&auto=format&fit=crop" alt="Pin 9"></article>
+  <article class="pin"><img loading="lazy" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop" alt="Pin 10"></article>
+
+  <!-- Added: Anime + Cars collection -->
+  <article class="pin"><img loading="lazy" src="https://picsum.photos/id/1024/800/600" alt="Anime 1"></article>
+  <article class="pin"><img loading="lazy" src="https://picsum.photos/id/1027/800/600" alt="Anime 2"></article>
+  <article class="pin"><img loading="lazy" src="https://picsum.photos/id/1035/800/600" alt="Anime 3"></article>
+  <article class="pin"><img loading="lazy" src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?q=80&w=800&auto=format&fit=crop" alt="Car 3"></article>
+  <article class="pin"><img loading="lazy" src="https://picsum.photos/id/1003/800/600" alt="Car 1"></article>
+  <article class="pin"><img loading="lazy" src="https://picsum.photos/id/1011/800/600" alt="Car 2"></article>
+  <article class="pin"><img loading="lazy" src="https://picsum.photos/id/1012/800/600" alt="Car 4"></article>
+    </section>
+  </main>
+
+</body>
+</html>
