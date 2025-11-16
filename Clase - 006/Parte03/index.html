@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Ejemplo Estándares W3C</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HTML5 Semántico -->
+    <header>
+        <!-- Logo SVG accesible -->
+        <div class="brand">
+            <svg width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="logoTitle logoDesc" xmlns="http://www.w3.org/2000/svg">
+                <title id="logoTitle">Logotipo de ejemplo</title>
+                <desc id="logoDesc">Círculo azul con una L mayúscula blanca en el centro</desc>
+                <circle cx="32" cy="32" r="30" fill="#0073e6" />
+                <text x="32" y="40" font-size="28" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif">L</text>
+            </svg>
+            <h1>Ejemplo de Estándares W3C: HTML5 + CSS3</h1>
+        </div>
+    </header>
+
+    <!-- Navegación -->
+    <nav aria-label="Navegación principal">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#info">Información</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main id="main">
+        <section id="inicio">
+            <h2>Inicio</h2>
+            <p>
+                Esta sección demuestra el uso de estructura semántica en HTML5,
+                incluyendo elementos como &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;,
+                &lt;section&gt; y &lt;footer&gt;.
+            </p>
+        </section>
+
+        <section id="info">
+            <h2>Información</h2>
+            <p>
+                Aquí se aplica Flexbox para distribuir el contenido de forma
+                responsiva y ordenada, uno de los estándares modernos de CSS3.
+            </p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes usar esta sección para colocar un formulario o información adicional.</p>
+
+            <!-- Ejemplo accesible: formulario con etiquetas vinculadas y aria -->
+            <form action="#" method="post" aria-label="Formulario de contacto simple">
+                <div class="form-row">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" type="text" required aria-required="true">
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Correo electrónico</label>
+                    <input id="email" name="email" type="email" required aria-required="true">
+                </div>
+
+                <div class="form-row">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        © 2025 – Ejemplo realizado para el Taller de Estándares W3C
+    </footer>
+
+</body>
+</html>
