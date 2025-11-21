@@ -1,0 +1,183 @@
+extends layout
+
+block content
+  // Navegación
+  nav.navbar
+    .container
+      .logo
+        img(src='/images/Logo Fortnite.png' alt='Fortnite Logo')
+      ul.nav-links
+        li
+          a(href='#inicio') Inicio
+        li
+          a(href='#modos') Modos de Juego
+        li
+          a(href='#personajes') Personajes
+        li
+          a(href='#mapa') Evolución del Mapa
+        li
+          a(href='#eventos') Eventos en Vivo
+
+  // Hero Section
+  section#inicio.hero
+    .hero-background
+      img(src='/images/fnbr-38-00-c6ms2-moe-webcarousel-1920x1080-1920x1080-07d56b8f95d8.webp' alt='Fortnite Background')
+    .hero-content
+      h1.hero-title ¡DONDE ATERRIZAS, DÓNDE SAQUEAS Y CÓMO GANAS ES TU DECISIÓN!
+      p.hero-subtitle Fortnite Battle Royale es el juego PvP gratuito de 100 jugadores
+      .hero-buttons
+        button.btn-primary Jugar Ahora
+        button.btn-secondary Ver Trailer
+      .stats
+        .stat-item
+          h3 350M+
+          p Jugadores
+        .stat-item
+          h3 5
+          p Capítulos
+        .stat-item
+          h3 1000+
+          p Skins
+
+  // Información General
+  section.info-section
+    .container
+      .info-content
+        .info-image
+          img(src='/images/FNBR_38-11_EndEvent_WebCarousel_VisID_1920x1080.webp' alt='Fortnite Gameplay')
+        .info-text
+          h2 ¿QUÉ ES FORTNITE?
+          p Fortnite es un videojuego battle royale gratuito desarrollado por Epic Games. Lanzado en 2017, se ha convertido en un fenómeno cultural global que combina acción, construcción y estrategia.
+          p El juego destaca por su estilo artístico colorido, mecánicas de construcción únicas y eventos en vivo que han revolucionado la industria del gaming.
+        .features
+          .feature-card
+            span.icon 🎯
+            h3 Construcción Única
+            p Sistema de construcción instantánea que añade profundidad estratégica
+          .feature-card
+            span.icon 🎨
+            h3 Skins Épicas
+            p Miles de skins y colaboraciones con marcas icónicas
+          .feature-card
+            span.icon 🌍
+            h3 Mapa Dinámico
+            p El mapa evoluciona cada temporada con nuevas ubicaciones
+
+  // Modos de Juego
+  section#modos.game-modes
+    .container
+      h2.section-title MODOS DE JUEGO
+      .modes-grid
+        each mode in gameModes
+          .mode-card
+            .mode-icon= mode.icon
+            h3= mode.name
+            p= mode.description
+
+  // Personajes y Skins
+  section#personajes.characters
+    .container
+      h2.section-title PERSONAJES Y SKINS
+      p.section-subtitle Desde héroes originales hasta colaboraciones épicas con las mayores franquicias del mundo
+      .skins-grid
+        each skin in skins
+          .skin-card
+            .skin-badge= skin.category
+            h3= skin.name
+            p= skin.description
+
+  // Colaboraciones Destacadas
+  section.collaborations
+    .container
+      h2.section-title COLABORACIONES ÉPICAS
+      .collab-grid
+        .collab-item
+          h3 🦸 Marvel
+          p Iron Man, Thor, Spider-Man, Thanos y más héroes del UCM
+        .collab-item
+          h3 🥷 Anime
+          p Naruto, Dragon Ball, Attack on Titan
+        .collab-item
+          h3 ⚔️ Star Wars
+          p Darth Vader, Stormtroopers, Obi-Wan Kenobi
+        .collab-item
+          h3 🎮 Gaming
+          p Kratos, Master Chief, Lara Croft, Aloy
+        .collab-item
+          h3 🎬 DC Comics
+          p Batman, Superman, Harley Quinn, Aquaman
+        .collab-item
+          h3 🎵 Música
+          p Travis Scott, Ariana Grande, Marshmello
+
+  // Evolución del Mapa
+  section#mapa.map-evolution
+    .container
+      h2.section-title EVOLUCIÓN DEL MAPA
+      p.section-subtitle El mapa de Fortnite ha evolucionado dramáticamente a través de los capítulos
+      .timeline
+        each chapter in mapEvolution
+          .timeline-item
+            .timeline-marker
+            .timeline-content
+              h3= chapter.season
+              span.year= chapter.year
+              p= chapter.description
+
+  // Eventos en Vivo
+  section#eventos.live-events
+    .container
+      h2.section-title EVENTOS EN VIVO
+      p.section-subtitle Fortnite ha redefinido los eventos en vivo en videojuegos con experiencias inolvidables
+      .events-featured
+        img(src='/images/FNECO_38-11_Plank_Cover_WebCarousel_1920x1080.webp' alt='Fortnite Event')
+      .events-grid
+        each event in liveEvents
+          .event-card
+            .event-header
+              h3= event.name
+              span.event-date= event.date
+            p= event.description
+
+  // Temporadas
+  section.seasons-info
+    .container
+      h2.section-title SISTEMA DE TEMPORADAS
+      .seasons-content
+        .season-info-card
+          h3 🎯 Battle Pass
+          p Cada temporada trae un nuevo Battle Pass con más de 100 recompensas exclusivas
+        .season-info-card
+          h3 📅 Duración
+          p Las temporadas duran aproximadamente 10-12 semanas con contenido nuevo constante
+        .season-info-card
+          h3 🎁 Recompensas
+          p Skins exclusivas, gestos, envolturas, picos y más cosméticos únicos
+
+  // Footer
+  footer.footer
+    .container
+      .footer-content
+        .footer-section
+          h3 FORTNITE
+          p El fenómeno Battle Royale que conquistó al mundo
+        .footer-section
+          h3 Enlaces Rápidos
+          ul
+            li
+              a(href='#') Descargar
+            li
+              a(href='#') Noticias
+            li
+              a(href='#') Competitivo
+            li
+              a(href='#') Creadores
+        .footer-section
+          h3 Plataformas
+          p PC • PS5 • Xbox • Switch • Mobile
+        .footer-section
+          h3 Síguenos
+          p Twitter • Instagram • YouTube • TikTok
+      .footer-bottom
+        p © 2025 Epic Games, Inc. Fortnite y sus logos son marcas registradas.
+        p Sitio web educativo creado con fines académicos

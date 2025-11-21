@@ -1,0 +1,17 @@
+{
+  "name": "fortnite-pug-app",
+  "version": "1.0.0",
+  "description": "Página web sobre Fortnite usando Express.js y Pug",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "keywords": ["fortnite", "pug", "express", "nodejs"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pug": "^3.0.2"
+  }
+}
